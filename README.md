@@ -1,4 +1,2 @@
-# arch_config
-# arch_config
-# arch_config
-# arch_config
+# Arch & Linux Configs
+Configuration settings and files for Arch and Linux 

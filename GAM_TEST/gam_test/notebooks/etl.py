@@ -44,12 +44,12 @@ def denorm_order_book(
         "Bid",
     ], "Transaction type `trans_type` must be `Ask` or `Bid`"
     # First compute impact cost from level two - order book data
-    temp = limit_order_book_df.copy(deep=True)
+    temp = limit_order_book.copy(deep=True)
     merge_cols = ["Time_Minute", "Level"]
     size_string, price_string = f"{trans_type}Size", f"{trans_type}Price"
 
-    size_cols = [col for col in limit_order_book_df.columns if size_string in col]
-    price_cols = [col for col in limit_order_book_df.columns if price_string in col]
+    size_cols = [col for col in temp.columns if size_string in col]
+    price_cols = [col for col in temp.columns if price_string in col]
 
     temp.index = temp["Time_Minute"]
     size_dict, price_dict = (

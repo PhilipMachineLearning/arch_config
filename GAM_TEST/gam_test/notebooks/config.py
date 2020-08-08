@@ -2,12 +2,16 @@
 
 """
 from pathlib import Path
+import os
+
+current_path = Path(os.path.abspath(__file__))
 
 FOLDER_PATHS_DICTS = {
-    "INPUT_DATA": Path.cwd().parents[0] / "data" / "input",
-    "STATIC_DATA": Path.cwd().parents[0] / "data" / "static",
-    "OUTPUT_DATA": Path.cwd().parents[0] / "data" / "output",
-    "FIGURES":Path.cwd().parents[0] / "reports" / "figures"
+    "INPUT_DATA": current_path.parents[1] / "data" / "input",
+    "STATIC_DATA": current_path.parents[1] / "data" / "static",
+    "OUTPUT_DATA": current_path.parents[1] / "data" / "output",
+    "CROSS_VALIDATION": current_path.parents[1] / "data" / "cross_validation",
+    "FIGURES": current_path.parents[1] / "reports" / "figures"
 }
 
 INPUT_DICT = {
@@ -15,8 +19,29 @@ INPUT_DICT = {
     "HOUR_DATA_PATH": FOLDER_PATHS_DICTS["INPUT_DATA"] / "ABC_Level_Two_Tick_Data.csv",
 }
 
+
+X_COLS = [
+    "Time",
+    "MinTimeHour",
+    "MaxTimeHour",
+    "Instrument_Code_id",
+    "High",
+    "Low",
+    "VWAP",
+    "TWAP",
+    "NumberOfTrades",
+    "Volume",
+    "Turnover",
+    "Avg_Bid_Ask_Spread",   
+]
+
+Y_COL = ["liquidity_cost"]
+
+WINDOW_SIZE = 48  #
 RANDOM_STATE = int(121301)
 N_ESTIMATORS = [16, 32, 100, 150, 200, 250]
+SCORING = "neg_mean_squared_error"
+N_SPLITS = 10
 
 
 # Set filenames (FN's) for liqiduity costs

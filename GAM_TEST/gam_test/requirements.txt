@@ -29,3 +29,9 @@ statsmodels
 pymc3
 plotly
 shap
+tsfresh
+tsfel
+tabulate
+ngboost
+tscv
+xgboost

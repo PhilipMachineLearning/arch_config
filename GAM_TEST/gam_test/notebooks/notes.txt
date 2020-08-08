@@ -1,0 +1,5 @@
+Some guidance as to how to create the dataset for your model if you are not sure how to get started. One way to calculate cost, for a volume of the security in a period of time, is to see what bid levels you would have to fill to sell that volume. The cost is then the difference between the bid prices you sell at in the different levels, and the mid-price (middle of L1 Bid and L1 Ask). For example, if I am selling 2,000 units and Level 1 has a bid size of 1,000, and Level 2 has a bid size of 2,000, I would sell 1,000 units at the Level 1 bid price and 1,000 as the Level 2 bid price.
+
+ 
+
+If you have any other ideas we’d be interested in what you can come up with. You might also have more success if your time periods are longer (e.g. in hours and days not minutes) – but please feel free to experiment yourselves. Once you have your dataset with your predicted variable calculated, you can train and test your model, and calculate the accuracy of your model. Just try your best – this task is not easy. Do your best to create a model, and if you’re unable to build something successful, please submit your code regardless and try to answer the follow on questions.

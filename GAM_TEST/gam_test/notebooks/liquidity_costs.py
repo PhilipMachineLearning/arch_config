@@ -144,16 +144,23 @@ def compute_liquidity_cost(
     window_size = (
         24 * 2 * 2
     )  # Each row represents half an hour, build models over 2 day time horizon
+    print("============================================================")
     print("Computing liquidity costs from rolling regression analysis.")
     print(f"Window size = {window_size}")
-
+    print("============================================================")
+    print()
+    
+    print("============================================================")
     print("Computing liquidity costs for ask transactions")
     asks_rols_results, asks_rols_params = compute_rolling_regression(
         window_size=window_size,
         endog=asks_regression_df[asks_cols_dict["y"]],
         exog=asks_regression_df[asks_cols_dict["x"]],
     )
-
+    print("============================================================")
+    print()
+    
+    print("============================================================")
     print("Computing liquidity costs for bid transactions")
     bids_rols_results, bids_rols_params = compute_rolling_regression(
         window_size=window_size,
@@ -182,6 +189,7 @@ def compute_liquidity_cost(
     )
     print()
     print("Succesfully executed! Exiting function")
+    print("============================================================")
     print()
     return results_dict
 
